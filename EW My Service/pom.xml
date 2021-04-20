@@ -37,9 +37,9 @@
                     </dependencies>
                 </plugin>
             </plugins>
-        </pluginManagement>
-          <distributionManagement>
-        <snapshotRepository>
+        </pluginManagement> 
+        <distributionManagement>
+        <snapshotRepository>         
             <id>maven-snapshots</id>
             <url>http://nexus.cicd.apps.ads2101-demo.cp.fyre.ibm.com/repository/maven-snapshots/ </url>
         </snapshotRepository>
