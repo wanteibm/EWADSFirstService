@@ -37,7 +37,7 @@
                     </dependencies>
                 </plugin>
             </plugins>
-        </pluginManagement> 
+        </pluginManagement>
         <distributionManagement>
         <snapshotRepository>         
             <id>maven-snapshots</id>
