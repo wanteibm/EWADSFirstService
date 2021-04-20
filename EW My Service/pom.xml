@@ -48,6 +48,6 @@
             <repository>
                 <id>maven-releases</id>
                 <url>http://nexus.cicd.apps.ads2101-demo.cp.fyre.ibm.com/repository/maven-releases/ </url>
-        </repository>
+            </repository>
         </distributionManagement>
 </project>
