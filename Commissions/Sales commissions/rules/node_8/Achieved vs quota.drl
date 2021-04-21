@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Achieved vs quota</name>
+  <uuid>889eba31-f5bf-4c6c-90bb-9bd3c27483bf</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to Revenue / Quota  ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

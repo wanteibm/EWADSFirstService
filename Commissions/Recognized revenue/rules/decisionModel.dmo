@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>df65ee10-ffb7-48b2-8f8f-d222693b9502</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="Recognized revenue" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Determine the amount of recognized revenue according to the type of transaction.
+Depending on the type of product and the channel, the amount of recognized revenue is not necessarily the same as the amount of a transaction.</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="transaction">
+        <description>Transaction data</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="Transaction" collection="false" name="transaction"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="transaction" typeRef="Transaction"/>
+    </inputData>
+    <decision id="node_1" name="Recognized revenue rate">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Transaction" collection="false" name="transaction"/>
+                <output bomType="java.lang.Double" collection="false" name="Recognized revenue rate"/>
+                <rule defaultRule="false" href="node_1/Revenue%20recognition%20table.dmt" kind="DecisionTable" name="Revenue recognition table"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Recognized revenue rate" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Recognized revenue">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Transaction" collection="false" name="transaction"/>
+                <input bomType="java.lang.Double" collection="false" name="Recognized revenue rate"/>
+                <output bomType="java.lang.Double" collection="false" name="Recognized revenue"/>
+                <rule defaultRule="false" href="node_2/Compute%20recognized%20revenue.drl" kind="BusinessRule" name="Compute recognized revenue"/>
+                <rule defaultRule="true" href="node_2/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Recognized revenue" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

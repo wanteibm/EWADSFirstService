@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>6a6ba316-0f56-4b26-bbf0-0d328c562bca</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="Tiered commissions" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Determine tier-based commissions</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <decision id="node_1" name="Tiers">
+        <description>Determine Tiers rate according to Revenue vs Quota</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Revenue"/>
+                <input bomType="java.lang.Double" collection="false" name="Quota"/>
+                <output bomType="Tier" collection="true" name="Tiers"/>
+                <rule defaultRule="false" href="node_1/Tiers.dmt" kind="DecisionTable" name="Tiers"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Tiers" typeRef="Tier[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Revenue">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Revenue"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Revenue" typeRef="java.lang.Double"/>
+    </inputData>
+    <inputData id="node_3" name="Quota">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Quota"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="Quota" typeRef="java.lang.Double"/>
+    </inputData>
+    <decision id="node_4" name="Tiered commissions">
+        <description>Determine tiered commissions</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Tier" collection="true" name="Tiers"/>
+                <input bomType="java.lang.Double" collection="false" name="Revenue"/>
+                <input bomType="java.lang.Double" collection="false" name="Quota"/>
+                <output bomType="java.lang.Double" collection="false" name="Tiered commissions"/>
+                <rule defaultRule="false" href="node_4/initialize.drl" kind="BusinessRule" name="initialize"/>
+                <rule defaultRule="false" href="node_4/compute%20commissions.drl" kind="BusinessRule" name="compute commissions"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Tiered commissions" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

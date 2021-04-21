@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Tiered commissions">
+  <name>tieredCommissions</name>
+  <uuid>0a7e4e63-5236-495d-82e4-a593fff8fc7b</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#6a6ba316-0f56-4b26-bbf0-0d328c562bca"/>
+  <targetRuleProject href="../../Tiered%20commissions#6fee87e0-a31f-41e0-a6f4-a404d9e0470e"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

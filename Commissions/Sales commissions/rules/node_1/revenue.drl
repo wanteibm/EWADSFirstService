@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>revenue</name>
+  <uuid>e04ffd21-c5c2-451b-8cc5-a33aac8fb410</uuid>
+  <documentation><![CDATA[Determine the amount of recognized revenue, based on transactions]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to 0;
+for each transaction in Transactions :
+    - set decision to decision + 
+      the recognized revenue computed from transaction being this transaction;
+]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

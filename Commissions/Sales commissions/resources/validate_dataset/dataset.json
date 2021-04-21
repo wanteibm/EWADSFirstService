@@ -1,0 +1,1 @@
+{"transactions":[{"channel":"Direct","amount":100000,"product":"Software"},{"channel":"Indirect","amount":150000,"product":"Subscription"}],"newAccounts":3,"quota":250000,"commissionMethod":"Tiered commissions"}

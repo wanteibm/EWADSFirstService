@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>b6d5dbf9-58ac-463b-a56d-6b95ee0f505a</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="Revenue commissions" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Determine commissions based on revenue</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Revenue">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Revenue"/>
+            </initialization>
+        </extensionElements>
+        <variable id="revenue_ii" name="Revenue" typeRef="java.lang.Double"/>
+    </inputData>
+    <decision id="node_1" name="Revenue based commissions">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Revenue"/>
+                <input bomType="java.lang.Double" collection="false" name="Quota"/>
+                <output bomType="java.lang.Double" collection="false" name="Revenue based commissions"/>
+                <rule defaultRule="false" href="node_1/Commission%20table.dmt" kind="DecisionTable" name="Commission table"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="revenueBasedCommissions_ii" name="Revenue based commissions" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Quota">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Quota"/>
+            </initialization>
+        </extensionElements>
+        <variable id="quota_ii" name="Quota" typeRef="java.lang.Double"/>
+    </inputData>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,47 @@
+
+# Channel
+Channel#concept.label = channel
+Channel.direct#instance.label = Direct
+Channel.indirect#instance.label = Indirect
+
+# CommissionMethod
+CommissionMethod#concept.label = commission method
+CommissionMethod.revenueCommissions#instance.label = Revenue commissions
+CommissionMethod.tieredCommissions#instance.label = Tiered commissions
+
+# Product
+Product#concept.label = product
+Product.services#instance.label = Services
+Product.software#instance.label = Software
+Product.subscription#instance.label = Subscription
+
+# Tier
+Tier#concept.label = tier
+Tier.Tier(double,double,double)#phrase.navigation = a new {tier} where {0, max} {1, min} {2, rate}
+Tier.max#phrase.action = set the max of {this} to {max}
+Tier.max#phrase.addition_setter = add {max} to the max of {this}
+Tier.max#phrase.navigation = {max} of {this}
+Tier.max#phrase.subtraction_setter = subtract {max} from the max of {this}
+Tier.min#phrase.action = set the min of {this} to {min}
+Tier.min#phrase.addition_setter = add {min} to the min of {this}
+Tier.min#phrase.navigation = {min} of {this}
+Tier.min#phrase.subtraction_setter = subtract {min} from the min of {this}
+Tier.rate#phrase.action = set the rate of {this} to {rate}
+Tier.rate#phrase.addition_setter = add {rate} to the rate of {this}
+Tier.rate#phrase.navigation = {rate} of {this}
+Tier.rate#phrase.subtraction_setter = subtract {rate} from the rate of {this}
+
+# Transaction
+Transaction#concept.documentation = Transaction details
+Transaction#concept.label = transaction
+Transaction.Transaction(double,Channel,Product)#phrase.navigation = a new {transaction} where {0, amount} {1, channel} {2, product}
+Transaction.amount#phrase.action = set the amount of {this} to {amount}
+Transaction.amount#phrase.addition_setter = add {amount} to the amount of {this}
+Transaction.amount#phrase.navigation = {amount} of {this}
+Transaction.amount#phrase.subtraction_setter = subtract {amount} from the amount of {this}
+Transaction.channel#phrase.action = set the channel of {this} to {channel}
+Transaction.channel#phrase.clearer = clear the channel of {this}
+Transaction.channel#phrase.navigation = {channel} of {this}
+Transaction.product#phrase.action = set the product of {this} to {product}
+Transaction.product#phrase.clearer = clear the product of {this}
+Transaction.product#phrase.navigation = {product} of {this}

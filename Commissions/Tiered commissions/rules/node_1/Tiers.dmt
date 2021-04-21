@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Tiers</name>
+  <uuid>a08fc854-fd87-4d10-a0c4-a260fdf9ae51</uuid>
+  <documentation><![CDATA[Determine Tiers rate according to Revenue vs Quota]]></documentation>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C1">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[Revenue/ Quota is more than <a number>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[add a new tier where
+    the min is <min>, 
+    the max is <max> ,
+    the rate is <rate> to decision 
+--
+]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C1">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[0]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[0]]></Param>
+                                <Param><![CDATA[0.5]]></Param>
+                                <Param><![CDATA[0.01]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[0.5]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[0.5]]></Param>
+                                <Param><![CDATA[0.8]]></Param>
+                                <Param><![CDATA[0.015]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[0.8]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[0.8]]></Param>
+                                <Param><![CDATA[1]]></Param>
+                                <Param><![CDATA[0.02]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[1]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[1]]></Param>
+                                <Param><![CDATA[1.5]]></Param>
+                                <Param><![CDATA[0.03]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[1.5]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[1.5]]></Param>
+                                <Param><![CDATA[2]]></Param>
+                                <Param><![CDATA[0.04]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[2]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[2]]></Param>
+                                <Param><![CDATA[10]]></Param>
+                                <Param><![CDATA[0.05]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(A0)[]#Format"><![CDATA[{0,number,#0.##%}]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Revenue vs Quota is more than]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[91]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[min]]></Data>
+            <Data Name="Definitions(A0)[1]#HeaderText"><![CDATA[max]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Tiers]]></Data>
+            <Data Name="Definitions(C1)#Width"><![CDATA[85]]></Data>
+            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[min]]></Data>
+            <Data Name="Definitions(C1)[0]#Format"><![CDATA[{0,number,#0.##%}]]></Data>
+            <Data Name="Definitions(A0)[2]#HeaderText"><![CDATA[rate]]></Data>
+            <Data Name="Definitions(C1)[]#Format"><![CDATA[{0,number,#0.##%}]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT></definition>
+</ilog.rules.studio.model.dt:DecisionTable>

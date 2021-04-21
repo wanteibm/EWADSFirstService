@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Recognized revenue">
+  <name>recognizedRevenue</name>
+  <uuid>b4c50683-aac9-41ea-bf30-d774042f88f3</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#df65ee10-ffb7-48b2-8f8f-d222693b9502"/>
+  <targetRuleProject href="../../Recognized%20revenue#c153579e-5a05-49be-9d15-14afcf8d1206"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

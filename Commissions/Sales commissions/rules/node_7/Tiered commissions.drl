@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Tiered commissions</name>
+  <uuid>a0dd1a2d-aaf3-4fe9-a1b5-7a305ab58ac3</uuid>
+  <documentation><![CDATA[Determine the tiered commissions]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 'Commission method' is Tiered commissions
+then
+    set decision to the tiered commissions computed from 
+    Revenue being Revenue , 
+    Quota being Quota ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Sales commissions">
+  <name>salesCommissions</name>
+  <uuid>10f7041d-1da2-4d7c-9bc9-5b54eca860ce</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#62c0e8d1-6943-49d3-a858-d20d95bc1e87"/>
+  <targetRuleProject href="../../Sales%20commissions#968bd764-3de0-4944-bcc4-ef175099b3fd"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

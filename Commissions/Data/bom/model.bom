@@ -1,0 +1,102 @@
+
+
+public class Channel
+        extends java.lang.Enum
+        property "ads.typeId" "2"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "channel"
+        property "de.generated" "true"
+{
+    domain {static direct, static indirect}
+    public static final readonly Channel direct
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Direct";
+    public static final readonly Channel indirect
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Indirect";
+}
+
+public class CommissionMethod
+        extends java.lang.Enum
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "commission method"
+        property "de.generated" "true"
+{
+    domain {static revenueCommissions, static tieredCommissions}
+    public static final readonly CommissionMethod revenueCommissions
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Revenue commissions";
+    public static final readonly CommissionMethod tieredCommissions
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Tiered commissions";
+}
+
+public class Product
+        extends java.lang.Enum
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "product"
+        property "de.generated" "true"
+{
+    domain {static services, static software, static subscription}
+    public static final readonly Product services
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Services";
+    public static final readonly Product software
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Software";
+    public static final readonly Product subscription
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Subscription";
+}
+
+public class Tier
+        property "ads.typeId" "5"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "tier"
+        property "de.generated" "true"
+{
+    public double max
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "max"
+                property update "true";
+    public double min
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "min"
+                property update "true";
+    public double rate
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "rate"
+                property update "true";
+    public Tier(double max, double min, double rate)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Tier()
+                property "dataio.default" "true";
+}
+
+public class Transaction
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "transaction"
+        property "de.generated" "true"
+{
+    public double amount
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "amount"
+                property update "true";
+    public Channel channel
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "channel"
+                property update "true";
+    public Product product
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "product"
+                property update "true";
+    public Transaction(double amount, Channel channel, Product product)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Transaction()
+                property "dataio.default" "true";
+}
+
