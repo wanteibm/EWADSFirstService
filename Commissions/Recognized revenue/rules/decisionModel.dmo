@@ -10,7 +10,7 @@ Depending on the type of product and the channel, the amount of recognized reven
         <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
     </extensionElements>
     <inputData id="node_0" name="transaction">
-        <description>Transaction data</description>
+        <description>This is Transaction data</description>
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
                 <output bomType="Transaction" collection="false" name="transaction"/>
