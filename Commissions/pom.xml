@@ -41,6 +41,16 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+    </buil
+        <distributionManagement>
+            <snapshotRepository>
+                <id>maven-snapshots</id>
+                <url>http://nexus.cicd.apps.ads2101-demo.cp.fyre.ibm.com/repository/maven-snapshots/ </url>
+            </snapshotRepository>
+            <repository>
+                <id>maven-releases</id>
+                <url>http://nexus.cicd.apps.ads2101-demo.cp.fyre.ibm.com/repository/maven-releases/ </url>
+            </repository>
+        </distributionManagement>d>
 
 </project>
