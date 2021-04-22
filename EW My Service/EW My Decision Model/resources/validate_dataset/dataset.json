@@ -1,7 +1,7 @@
 {
   "name": "Elliotte",
   "weather": {
-    "rain forecast": 90,
+    "rain forecast": 10,
     "storm alert": false,
     "temperature": "cold"
   }
