@@ -70,7 +70,7 @@
                             <Expression>
                                 <Param><![CDATA[0.8]]></Param>
                                 <Param><![CDATA[1]]></Param>
-                                <Param><![CDATA[0.02]]></Param>
+                                <Param><![CDATA[0.025]]></Param>
                             </Expression>
                         </Action>
                     </ActionSet>
